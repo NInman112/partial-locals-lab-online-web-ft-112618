@@ -15,8 +15,9 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_search)
-    binding.pry
-    if Student.all.name.exclude?(student_search)
+
+    Student.all.find do |student|
+      binding.pry
     end
   end
 end
