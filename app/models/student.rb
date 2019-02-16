@@ -19,10 +19,7 @@ class Student < ActiveRecord::Base
     if student_search.empty?
       @students = Student.all
     else
-      Student.all.each do |student|
-        binding.pry
-        student.where("title like ?", "%#{student_search}%")
-      end
+      Student.all.select {|student| student.name.downcase.include?(name.downcase)}
     end
   end
 
