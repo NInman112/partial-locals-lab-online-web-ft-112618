@@ -15,10 +15,11 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_search)
-
-    Student.all.find.tap do |student|
+    Student.all.find do |student|
       if student.name.downcase == student
       #binding.pry
+      else
+        @students = Student.all
       end
     end
   end
