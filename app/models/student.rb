@@ -20,6 +20,7 @@ class Student < ActiveRecord::Base
       @students = Student.all
     else
       Student.all.each do |student|
+        binding.pry
         student.where("title like ?", "%#{student_search}%")
       end
     end
