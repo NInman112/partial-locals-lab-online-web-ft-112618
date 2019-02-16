@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if student_search.empty?
       Student.all
     else
-      Student.all.select {|student| student.name.downcase.include?(name.downcase)}
+      Student.all.select {|student| student.name.downcase.include?(student_search.downcase)}
     end
   end
 
