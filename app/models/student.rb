@@ -16,9 +16,9 @@ class Student < ActiveRecord::Base
 
   def self.search(student_search)
 
-    Student.all.find do |student|
+    Student.all.find.tap do |student|
       if student.name.downcase == student
-      binding.pry
+      #binding.pry
       end
     end
   end
