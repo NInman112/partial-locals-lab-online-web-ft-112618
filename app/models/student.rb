@@ -16,10 +16,10 @@ class Student < ActiveRecord::Base
 
   def self.search(student_search)
     Student.all.find do |student|
-      if student.name.downcase == student
+      if student.name.empty?
       #binding.pry
       else
-        @students = Student.all
+
       end
     end
   end
