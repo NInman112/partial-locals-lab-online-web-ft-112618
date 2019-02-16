@@ -16,6 +16,6 @@ class Student < ActiveRecord::Base
 
   def self.search(student_search)
     binding.pry
-    if Student.all.includes?(student_search)
+    if Student.all.include?(student_search)
   end
 end
