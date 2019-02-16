@@ -18,8 +18,10 @@ class Student < ActiveRecord::Base
     #binding.pry
     if student_search.empty?
       @students = Student.all
-    #else
-
+    else
+      Student.all.each do |student|
+        student.where("title like ?", "#{student_search}")
+      end
     end
   end
 
