@@ -15,12 +15,8 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_search)
-    Student.all.find do |student|
-      if student.name == ''
-      binding.pry
-      else
-
-      end
-    end
+    binding.pry
   end
+
+  
 end
